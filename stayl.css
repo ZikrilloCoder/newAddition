@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+}
+:root {
+    --accent: #EA5959;
+    --default:rgba(0, 0, 0, 0.3);
+    --color1:red;
+}
+body {
+    font-family: 'Poppins';
+    background-color: var(--accent);
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+}
+.todo {
+    padding: 32px;
+    background-color: #fff;
+    width: 50vw;
+    height: 500px;
+    border-radius: 16px;
+}
+.todo_new {
+    --size:50px;
+    display: flex;
+    padding: 16px 0 ;
+}
+.todo_new input {
+    margin-right: 16px;
+    font-size: 18px;
+    padding: 8px 16;
+    height: var(--size);  
+    border-radius: 5px; 
+    flex-grow: 1;
+    background-color: white;
+    border: 1px solid var(--default);
+}
+.todo_add{
+    cursor: pointer;
+    text-align: center;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
+    line-height: calc(var(--size) * 1);
+    background: var(--accent);
+    color: white;
+    font-size: 20px;
+    /* font-weight: 200; */
+}
+.todo_task-del{
+    cursor: pointer;
+    text-align: center;
+    width: var(--size);
+    height: var(--size);
+    border-radius: var(--size);
+    line-height: calc(var(--size) * 1);
+    background: var(--accent);
+    color: white;
+    font-size: 15px;
+    /* font-weight: 200; */
+} 
+span{
+    font-size: 18px;
+    font-weight: 600;
+}
+/*List*/
+.todo_list {
+    margin-top: 32px;
+}
+.todo_list > * :not(:last-child) {
+    margin-bottom: 8px;
+}
+.todo_task {
+    --size:36px;
+    min-height: var(--size);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+/* .todo_task:hover .todo_task-del {
+    display: block;
+} */
+.todo_task_complete .todo_task-text {
+    text-decoration: line-through;
+    color: var(--default);
+}
+.todo_checkbox {
+    margin-right: 16px;
+}
+.todo_checkbox input {
+    display: none;
+}
+.todo_checkbox input:checked + div {
+    background-color: var(--accent);
+}
+.todo_checkbox input:checked + div::after {
+    display: block;
+}
+.todo_checkbox div {
+    cursor: pointer;
+    --size:28px;
+    height: var(--size);
+    width: var(--size);
+    border-radius: 4px;
+    position: relative;
+    color: white;
+    border: 1px solid var(--accent);
+}
+.todo_checkbox div::after{
+    content: '✔';
+    text-align: center;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.todo_task-text {
+    font-size: 20px;
+}
+.todo_task-del {
+    /* display: none; */
+    margin-left: auto;
+    margin-right: 0;
+    font-size: px;
+    line-height: calc(var(--size) * 0.95);
+}
